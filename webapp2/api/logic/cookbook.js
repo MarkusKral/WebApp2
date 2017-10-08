@@ -1,6 +1,5 @@
 'use strict';
 
-
 var mongoose = require('mongoose'),
   Receipe = mongoose.model('Receipe'),
   User = mongoose.model('User');

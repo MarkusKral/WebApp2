@@ -37,6 +37,8 @@ module.exports = function(app) {
   }));
 
   app.post('/signup', passport.authenticate('local-signup', {
+    // curl will automatically use POST to address the /profile page.
+    // how can we redirect to a GET?
     successRedirect : '/profile', // redirect to the secure profile section
     failureRedirect : '/signup', // redirect back to the signup page if there is an error
     failureFlash : true // allow flash messages
@@ -45,6 +47,7 @@ module.exports = function(app) {
 
 
   app.post('/login', passport.authenticate('local-login', {
+    // same as with signup
     successRedirect : '/profile', // redirect to the secure profile section
     failureRedirect : '/login', // redirect back to the signup page if there is an error
     failureFlash : true // allow flash messages
@@ -52,7 +55,7 @@ module.exports = function(app) {
 
   app.route('/profile')
     .get(isLoggedIn, cookbook.getProfile)
-
+    .post(isLoggedIn, cookbook.getProfile)
 
 
 
