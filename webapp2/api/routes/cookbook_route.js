@@ -18,7 +18,7 @@ module.exports = function(app) {
 
   // todoList Routes
   app.route('/')
-    .get(isLoggedIn, todoList.list_all_receipe)
+    .get(todoList.list_all_receipe)
     .post(todoList.create_a_receipe, isLoggedIn);
 
   app.post('/create', passport.authenticate('local-signup', {
