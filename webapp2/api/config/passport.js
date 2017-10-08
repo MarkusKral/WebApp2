@@ -18,11 +18,13 @@ module.exports = function(passport) {
 
     // used to serialize the user for the session
     passport.serializeUser(function(user, done) {
+      console.log("serializeUser");
         done(null, user.id);
     });
 
     // used to deserialize the user
     passport.deserializeUser(function(id, done) {
+      console.log("deserialize user");
         User.findById(id, function(err, user) {
             done(err, user);
         });
@@ -110,6 +112,7 @@ module.exports = function(passport) {
           return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.')); // create the loginMessage and save it to session as flashdata
 
         // all is well, return successful user
+
         return done(null, user);
       });
 

@@ -30,10 +30,9 @@ app.use(bodyParser()); // get information from html forms
 //use sessions for tracking logins
 app.use(session({
   secret: 'whatshallwedowiththedrunkensailor',
-  resave: true,
-  saveUninitialized: false,
+ // resave: true,
+ // saveUninitialized: false,
   cookie: {
-      domain: 'localhost',
       maxAge: 1000 * 24 * 60
   }
 }));

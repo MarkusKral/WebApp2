@@ -13,12 +13,12 @@ module.exports = function(app) {
       return next();
 
     // if they aren't redirect them to the home page
-    res.redirect('/');
+    res.redirect('/login');
   }
 
   // todoList Routes
   app.route('/')
-    .get(todoList.list_all_receipe)
+    .get(isLoggedIn, todoList.list_all_receipe)
     .post(todoList.create_a_receipe, isLoggedIn);
 
   app.post('/create', passport.authenticate('local-signup', {
@@ -62,11 +62,11 @@ module.exports = function(app) {
     failureFlash : true // allow flash messages
   }));
 
-  // app.get('/profile',
-  //   passport.authenticate('cookie', { session: false }),
-  //   function (req, res) {
-  //     res.json(req.user);
-  //   });
+  app.get('/profile',
+    passport.authenticate('cookie', { session: false }),
+    function (req, res) {
+      res.json(req.user);
+    });
 
 
 //  app.route('/login')
