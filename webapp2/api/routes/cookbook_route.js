@@ -22,12 +22,13 @@ module.exports = function(app) {
   // cookbook Routes for special receipe
   app.route('/receipe/:receipeID')
     .get(isLoggedIn, cookbook.getReceipebyID)
-    .post(isLoggedIn,cookbook.getProfile);
+    .post(isLoggedIn,cookbook.getProfile)
+    .patch(isLoggedIn, cookbook.update_receipe)
+    .delete(isLoggedIn, cookbook.delete_receipe);
 
-  app.get('/receipe/:userId/books/:bookId', function (req, res) {
-    res.send(req.params)
-  })
 
+
+ // app.update('/receipe/:receipeID', isLoggedIn, cookbook.update_receipe);
 
 
   app.post('/create', passport.authenticate('local-signup', {
