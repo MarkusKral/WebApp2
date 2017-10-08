@@ -1,10 +1,8 @@
 'use strict';
 module.exports = function(app) {
-  var todoList = require('../logic/cookbook.js');
-  //var auth = require('../auth/login.js');
+  var cookbook = require('../logic/cookbook.js');
+  var passport = require('passport');
 
-  //var auth = require('../auth/login.js');
-  var passport = require('passport')
 
   function isLoggedIn(req, res, next) {
 
@@ -16,10 +14,21 @@ module.exports = function(app) {
     res.redirect('/login');
   }
 
-  // todoList Routes
-  app.route('/')
-    .get(isLoggedIn, todoList.list_all_receipe)
-    .post(todoList.create_a_receipe, isLoggedIn);
+  // cookbook Routes
+  app.route('/receipe')
+    .get(isLoggedIn, cookbook.list_all_receipe)
+    .post(isLoggedIn,cookbook.create_a_receipe);
+
+  // cookbook Routes for special receipe
+  app.route('/receipe/:receipeID')
+    .get(isLoggedIn, cookbook.getReceipebyID)
+    .post(isLoggedIn,cookbook.getProfile);
+
+  app.get('/receipe/:userId/books/:bookId', function (req, res) {
+    res.send(req.params)
+  })
+
+
 
   app.post('/create', passport.authenticate('local-signup', {
     successRedirect : '/create', // redirect to the secure profile section
@@ -27,27 +36,6 @@ module.exports = function(app) {
     failureFlash : true // allow flash messages
   }));
 
-
-  // app.route('/tasks/:taskId')
-  //   .get(todoList.read_a_task)
-  //   .put(todoList.update_a_task)
-  //   .delete(todoList.delete_a_task);
-/*
-  app.route('/create_user')
-      .post(auth.create_user);
-
-  app.route('/login')
-      .post(auth.login)*/
-
-  // app.post('/login',
-  //   passport.authenticate('local', { failureRedirect: '/login' }),
-  //   function(req, res) {
-  //     res.redirect('/');
-  //   });  // app.post('/login',
-  //   passport.authenticate('local', { failureRedirect: '/login' }),
-  //   function(req, res) {
-  //     res.redirect('/');
-  //   });
   app.post('/signup', passport.authenticate('local-signup', {
     successRedirect : '/profile', // redirect to the secure profile section
     failureRedirect : '/signup', // redirect back to the signup page if there is an error
@@ -62,13 +50,11 @@ module.exports = function(app) {
     failureFlash : true // allow flash messages
   }));
 
-  app.get('/profile',
-    passport.authenticate('cookie', { session: false }),
-    function (req, res) {
-      res.json(req.user);
-    });
+  app.route('/profile')
+    .get(isLoggedIn, cookbook.getProfile)
 
 
-//  app.route('/login')
-//      .post(auth.login);
+
+
+
 };

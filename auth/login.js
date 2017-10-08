@@ -1,19 +1,19 @@
-
-var mongoose = require('mongoose'),
-    User = mongoose.model('User');
-var bCrypt = require('bcrypt')
-var passport = require('passport');
-
-
-// Generates hash using bCrypt
-var createHash = function(password){
- return bCrypt.hashSync(password, bCrypt.genSaltSync(10), null);
-}
-
-// see if password is valid
-var isValidPassword = function(user, password){
-  return bCrypt.compareSync(password, user.password);
-}
+//
+// var mongoose = require('mongoose'),
+//     User = mongoose.model('User');
+// var bCrypt = require('bcrypt')
+// var passport = require('passport');
+//
+//
+// // Generates hash using bCrypt
+// var createHash = function(password){
+//  return bCrypt.hashSync(password, bCrypt.genSaltSync(10), null);
+// }
+//
+// // see if password is valid
+// var isValidPassword = function(user, password){
+//   return bCrypt.compareSync(password, user.password);
+// }
 
 // exports.login('login', new LocalStrategy({
 //     passReqToCallback : true

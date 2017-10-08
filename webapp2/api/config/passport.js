@@ -5,7 +5,6 @@ var LocalStrategy   = require('passport-local').Strategy;
 
 // load up the user model
 var User            = require('../models/user.js');
-var CookieStrategy = require('passport-cookie').Strategy;
 
 // expose this function to our app using module.exports
 module.exports = function(passport) {
@@ -117,18 +116,5 @@ module.exports = function(passport) {
       });
 
     }));
-
-  passport.use(new CookieStrategy(
-    function(token, done) {
-      User.findByToken({ token: token }, function(err, user) {
-        if (err) { return done(err); }
-        if (!user) { return done(null, false); }
-        return done(null, user);
-      });
-    }
-  ));
-
 };
-
-//};
 

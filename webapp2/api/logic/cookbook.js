@@ -57,12 +57,12 @@ exports.delete_a_task = function(req, res) {
 
 exports.create_user = function (req,res){
     if (req.body.email &&
-        req.body.username &&
+        //req.body.username &&
         req.body.password ) {
 
         var userData = {
             email: req.body.email,
-            username: req.body.username,
+            //username: req.body.username,
             password: req.body.password
         }
 
@@ -77,35 +77,16 @@ exports.create_user = function (req,res){
     }
 };
 
-// exports.login = function (req, res){
-//   User.authenticate(req.body.email, req.body.password);
-// }
+exports.getProfile = function (req,res){
+   res.json(req.user);
+};
+
+exports.getReceipebyID = function (req,res){
+  Receipe.findById(req.params.receipeID, function(err, receipe) {
+    if (err)
+      res.send(err);
+    res.json(receipe);
+  });
+};
 
 
-// exports.login = function (req, res, callback) {
-//     //User.statics.authenticate = function (email, password, callback) {
-//     User.findOne({email: req.body.email})
-//         .exec(function (err, user) {
-//             if (err) {
-//                 return callback(err)
-//             } else if (!user) {
-//                 var err = new Error('User not found.');
-//                 err.status = 401;
-//                 return callback(err);
-//             }
-//             // if (req.body.password == user.password){
-//             //   //return callback(null, user);
-//             //     res.json(user)
-//             // } else {
-//             //   return callback()
-//             // }
-//             bcrypt.compare(req.body.password, user.password, function (err, result) {
-//                 if (result === true) {
-//                     return callback(null, user);
-//                 } else {
-//                     return callback();
-//                 }
-//             })
-//         })
-//     //}
-// };

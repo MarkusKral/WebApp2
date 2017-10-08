@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 var Receipe = new Schema({
   name: {
     type: String,
-    required: 'Kindly enter the name of the task'
+    required: 'Enter the name of the task'
   },
   Created_date: {
     type: Date,
