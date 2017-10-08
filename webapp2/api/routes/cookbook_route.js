@@ -16,12 +16,12 @@ module.exports = function(app) {
 
   // cookbook Routes
   app.route('/receipe')
-    .get(isLoggedIn, cookbook.list_all_receipe)
+    .get(cookbook.list_all_receipe)
     .post(isLoggedIn,cookbook.create_a_receipe);
 
   // cookbook Routes for special receipe
   app.route('/receipe/:receipeID')
-    .get(isLoggedIn, cookbook.getReceipebyID)
+    .get(cookbook.getReceipebyID)
     .post(isLoggedIn,cookbook.getProfile)
     .patch(isLoggedIn, cookbook.update_receipe)
     .delete(isLoggedIn, cookbook.delete_receipe);
