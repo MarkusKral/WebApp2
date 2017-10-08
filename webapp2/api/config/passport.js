@@ -5,6 +5,7 @@ var LocalStrategy   = require('passport-local').Strategy;
 
 // load up the user model
 var User            = require('../models/user.js');
+var flash = require("connect-flash");
 
 // expose this function to our app using module.exports
 module.exports = function(passport) {
@@ -57,6 +58,8 @@ module.exports = function(passport) {
             // check to see if theres already a user with that email
             if (user) {
                 return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
+              //return done(null, false)//, req.send('That email is already taken.'));
+
             } else {
 
                 // if there is no user with that email

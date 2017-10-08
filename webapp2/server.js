@@ -41,6 +41,7 @@ app.use(session({
 
 
 // required for passport
+app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
