@@ -3,8 +3,10 @@ title: WIT-cookbook
 users can register themselfes and log in.
 
 without login someone can: 
-- list all receipes (GET /receipe)	
+- list all receipes (GET /receipe)
+- list all receipes ordered by creation-date (GET /newest)
 - list specific receipe (GET /receipe/<id>)
+- list receipes by user (GET /user/<id>)
 - login (POST /login)
 
 after login someone can:

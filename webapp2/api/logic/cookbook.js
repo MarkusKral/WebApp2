@@ -30,7 +30,16 @@ exports.getReceipebyID = function (req,res){
   });
 };
 
+exports.getReceipebyUser = function (req,res){
+  Receipe.find({Created_by: req.params.userID}, function(err, receipe) {
+    if (err)
+      res.send(err);
+    res.json(receipe);
+  });
+};
+
 exports.create_a_receipe = function(req, res) {
+  req.body.Created_by = req.user._id;
   var new_receipe = new Receipe(req.body);
   new_receipe.save(function(err, task) {
     if (err)

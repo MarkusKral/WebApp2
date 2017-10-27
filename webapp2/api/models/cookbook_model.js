@@ -12,9 +12,10 @@ var ReceipeSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  // Created_by:{
-  //   type: ObjectId
-  // },
+  Created_by:{
+    type: String,
+    default: null
+  },
   ingredients:{
     type: {},
     required: 'A receipe needs ingredients.'

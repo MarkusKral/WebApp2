@@ -30,6 +30,10 @@ module.exports = function(app) {
   app.route('/newest')
     .get(cookbook.newestReceipes);
 
+  app.route('/user/:userID')
+    .get(cookbook.getReceipebyUser);
+
+
  // app.update('/receipe/:receipeID', isLoggedIn, cookbook.update_receipe);
 
   //

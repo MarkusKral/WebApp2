@@ -20,6 +20,26 @@
 			"response": []
 		},
 		{
+			"name": "newestReceipe",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/newest",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"newest"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
 			"name": "getID",
 			"request": {
 				"method": "GET",
