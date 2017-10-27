@@ -3,20 +3,24 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 
-var Receipe = new Schema({
+var ReceipeSchema = new Schema({
   name: {
     type: String,
-    required: 'Enter the name of the task'
+    required: 'A receipe needs a name.'
   },
   Created_date: {
     type: Date,
     default: Date.now
   },
+  // Created_by:{
+  //   type: ObjectId
+  // },
   ingredients:{
     type: {},
-    required: 'a receipe needs ingredients'
+    required: 'A receipe needs ingredients.'
   }
 }, {collection: 'receipe'});
 
-module.exports = mongoose.model('Receipe', Receipe);
 
+var Receipe = mongoose.model('Receipe', ReceipeSchema);
+module.exports = Receipe;

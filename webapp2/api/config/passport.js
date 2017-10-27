@@ -1,4 +1,7 @@
-// config/passport.js
+/**
+ * authentication has been programmed following this tutorial:
+ * https://scotch.io/tutorials/easy-node-authentication-setup-and-local
+ */
 
 // load all the things we need
 var LocalStrategy   = require('passport-local').Strategy;
@@ -18,13 +21,11 @@ module.exports = function(passport) {
 
     // used to serialize the user for the session
     passport.serializeUser(function(user, done) {
-      console.log("serializeUser");
         done(null, user.id);
     });
 
     // used to deserialize the user
     passport.deserializeUser(function(id, done) {
-      console.log("deserialize user");
         User.findById(id, function(err, user) {
             done(err, user);
         });

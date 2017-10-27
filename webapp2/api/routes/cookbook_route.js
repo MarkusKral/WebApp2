@@ -26,16 +26,18 @@ module.exports = function(app) {
     .patch(isLoggedIn, cookbook.update_receipe)
     .delete(isLoggedIn, cookbook.delete_receipe);
 
-
+  // cookbook Routes
+  app.route('/newest')
+    .get(cookbook.newestReceipes);
 
  // app.update('/receipe/:receipeID', isLoggedIn, cookbook.update_receipe);
 
-
-  app.post('/create', passport.authenticate('local-signup', {
-    successRedirect : '/create', // redirect to the secure profile section
-    failureRedirect : '/signup', // redirect back to the signup page if there is an error
-    failureFlash : true // allow flash messages
-  }));
+  //
+  // app.post('/create', passport.authenticate('local-signup', {
+  //   successRedirect : '/create', // redirect to the secure profile section
+  //   failureRedirect : '/signup', // redirect back to the signup page if there is an error
+  //   failureFlash : true // allow flash messages
+  // }));
 
   app.post('/signup', passport.authenticate('local-signup', {
     // curl will automatically use POST to address the /profile page.
@@ -57,8 +59,5 @@ module.exports = function(app) {
   app.route('/profile')
     .get(isLoggedIn, cookbook.getProfile)
     .post(isLoggedIn, cookbook.getProfile)
-
-
-
 
 };

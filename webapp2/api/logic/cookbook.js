@@ -13,6 +13,15 @@ exports.list_all_receipe= function(req, res) {
   });
 };
 
+exports.newestReceipes= function(req, res) {
+  // doesnt work currently
+  Receipe.find({}).sort({ Created_date : -1 }).exec(function(err, task) {
+    if (err)
+      res.send  (err);
+    res.json(task);
+  });
+};
+
 exports.getReceipebyID = function (req,res){
   Receipe.findById(req.params.receipeID, function(err, receipe) {
     if (err)
@@ -50,27 +59,10 @@ exports.delete_receipe = function(req, res) {
   });
 };
 
-// exports.create_user = function (req,res){
-//     if (req.body.email &&
-//         //req.body.username &&
-//         req.body.password ) {
-//
-//         var userData = {
-//             email: req.body.email,
-//             //username: req.body.username,
-//             password: req.body.password
-//         }
-//
-//         //use schema.create to insert data into the db
-//         User.create(userData, function (err, user) {
-//             if (err) {
-//               res.send(err);
-//             } else {
-//                 res.json({ message: 'User created' })
-//             }
-//         });
-//     }
-// };
+// toadd:
+// search-method
+// update-receipe, check for same user
+
 
 exports.getProfile = function (req,res){
    res.json(req.user);

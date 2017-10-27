@@ -10,22 +10,15 @@ var UserSchema = new Schema({
     required: true,
     trim: true
   },
-  // username: {
-  //   type: String,
-  //   unique: true,
-  //   required: false,
-  //   trim: true
-  // },
   password: {
     type: String,
-    required: true,
-  },
-  // token: {
+    required: true
+  }
+  // username: {
   //   type: String,
   //   required: false,
-  //   unique: true,
-  //   default: null
-  //}
+  //   default: "undefined"
+  // }
 },{collection: 'user'});
 
 // generating a hash
