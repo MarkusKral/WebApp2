@@ -165,6 +165,27 @@
 			"response": []
 		},
 		{
+			"name": "ReceipeByUser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/user/59ec8c7d7e75377080e77f65",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"59ec8c7d7e75377080e77f65"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
 			"name": "updateReceipe",
 			"request": {
 				"method": "PATCH",
