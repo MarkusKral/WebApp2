@@ -1,0 +1,58 @@
+<div class="jumbotron text-center">
+    <h1>List one receipe</h1>
+
+    <p>{{ message }}</p>
+    <pre>{{donations | json}}</pre>
+
+    <div ng-controller="viewReceipeController">
+        <table align="center" valign="middle" width="40%">
+            <tr ng-repeat="field in donations">
+            <tr style="height:55px; font-size:36px; margin-left:20px; margin-right:20px; valign="middle";>
+
+            <td height="100">
+                {{donations.name}}
+            </td>
+            </tr>
+            <tr>
+                <td height="50">
+                    Created:
+                </td>
+                <td height="50">
+                    {{donations.Created_date}}
+                </td>
+            </tr>
+            <tr>
+                <td height="50">
+                    Created by:
+                </td>
+                <td height="50">
+                    {{donations.Created_by}}
+                </td>
+            </tr>
+            <tr>
+                <td height="50">
+                    Ingredients:
+                </td>
+                <td height="50">
+                    {{donations.ingredients}}
+                </td>
+
+            </tr>
+
+
+            </tbody>
+        </table>
+    </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+
+        <button type="button" class="btn btn-danger" ng-click="delete(donations._id)">DELETE</button>
+        <div ng-controller="donateController">
+        <button type="button" class="btn btn-info" ng-click="updateReceipe(donations._id)">UPDATE</button>
+        </div>
+
+    </div>
+</div>

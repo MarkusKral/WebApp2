@@ -1,0 +1,56 @@
+<div class="jumbotron text-center">
+    <h1>List All Receipes</h1>
+
+    <p ng-if="!toggle">{{ message }} String1</p>
+    <span class="glyphicon glyphicon-eye-open" ng-click="toggle = !toggle"></span>
+
+
+    <p ng-if="toggle">{{ message }} String2</p>
+
+    <div class="two" ng-controller="viewReceipeController">
+        <table align="center" valign="middle">
+            <tr>
+                <td allign="center">
+                    <font size="+2">Name:</font>
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+                <td allign="center">
+                    <font size="+2">Created:</font>
+                </td>
+            </tr>
+            <tbody ng-repeat="donation in donations">
+            <tr style="height:55px; font-size:20px; margin-left:20px; margin-right:20px; valign=" middle
+            "; >
+            <td>
+                <span class="glyphicon glyphicon-eye-open" ng-click="viewReceipe(donation._id)"></span>
+                {{donation.name}}
+            </td>
+            <td>
+                &nbsp;
+            </td>
+            <td>
+                &nbsp;
+            </td>
+            <td>
+                &nbsp;
+            </td>
+
+            <td>
+                {{donation.Created_date}}
+            </td>
+            <td>
+
+            </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

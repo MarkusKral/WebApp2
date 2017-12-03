@@ -10,9 +10,22 @@
   "author": "Markus Kral",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^1.12.1"
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.4.1",
+    "bootstrap": "^3.3.7",
+    "clean-webpack-plugin": "^0.1.17",
+    "css": "^2.2.1",
+    "ejs": "^2.5.7",
+    "font-awesome": "^4.7.0",
+    "html-webpack-plugin": "^2.30.1",
+    "nodemon": "^1.12.1",
+    "path": "^0.12.7",
+    "style": "0.0.3",
+    "webpack": "^1.15.0"
   },
   "dependencies": {
+    "angular": "^1.3.10",
+    "angular-route": "^1.3.10",
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
     "connect-flash": "^0.1.1",

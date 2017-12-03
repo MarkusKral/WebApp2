@@ -14,6 +14,9 @@ module.exports = function(app) {
     res.redirect('/login');
   }
 
+  app.route('/')
+    .get(cookbook.index);
+
   // cookbook Routes
   app.route('/receipe')
     .get(cookbook.list_all_receipe)
@@ -25,6 +28,9 @@ module.exports = function(app) {
     .post(isLoggedIn,cookbook.getProfile)
     .patch(isLoggedIn, cookbook.update_receipe)
     .delete(isLoggedIn, cookbook.delete_receipe);
+
+  app.route('/search/:searchParam')
+    .get(cookbook.search_receipe);
 
   // cookbook Routes
   app.route('/newest')

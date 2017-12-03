@@ -5,7 +5,9 @@ var express = require('express'),
   Receipe = require('./api/models/cookbook_model'), //created model loading her
   User = require('./api/models/user'); //created model loading here
 
+
 var session = require('express-session');
+var path = require('path');
 
 var passport = require('passport')
 
@@ -52,11 +54,18 @@ app.use(session({
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
+app.set('view engine', 'ejs');
+
+app.use("/public", express.static(__dirname + "/public"));  // NEW
+app.set('views', path.join(__dirname, 'views'));
+//app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(express.static(path.join(__dirname, 'public')));
+
+
 
 // app.use(passport.initialize());
 // app.use(passport.session());
 //require('./app/routes.js')(app, passport);
-
 var routes = require('./api/routes/cookbook_route'); //importing route
 routes(app); //register the route
 
