@@ -1,2 +1,5 @@
 .idea
 ./webapp2/.idea
+./webapp2/node_modules/
+./node_modules
+webapp2/node_modules

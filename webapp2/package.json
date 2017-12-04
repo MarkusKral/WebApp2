@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "build": "webpack"1
   },
   "author": "Markus Kral",
   "license": "ISC",
@@ -15,12 +16,16 @@
     "bootstrap": "^3.3.7",
     "clean-webpack-plugin": "^0.1.17",
     "css": "^2.2.1",
+    "css-loader": "^0.24.0",
     "ejs": "^2.5.7",
+    "file-loader": "^0.9.0",
     "font-awesome": "^4.7.0",
     "html-webpack-plugin": "^2.30.1",
     "nodemon": "^1.12.1",
     "path": "^0.12.7",
     "style": "0.0.3",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.9",
     "webpack": "^1.15.0"
   },
   "dependencies": {
