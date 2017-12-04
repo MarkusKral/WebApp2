@@ -1,3 +1,8 @@
 language: node_js
 node_js:
   - stable
+services:
+  - mongodb
+before_script:
+  - sleep 10
+  - mongo cookbookTest --eval 'db.createUser({user:"cookbook",pwd:"12345678",roles:["readWrite"]});'
