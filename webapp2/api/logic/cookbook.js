@@ -16,7 +16,7 @@ exports.list_all_receipe= function(req, res) {
 
 exports.newestReceipes= function(req, res) {
   // doesnt work currently
-  Receipe.find({}).sort({ Created_date : -1 }).exec(function(err, task) {
+  Receipe.find({}).sort({ Created_date : -1 }).limit(5).exec(function(err, task) {
     if (err)
       res.send  (err);
     res.json(task);

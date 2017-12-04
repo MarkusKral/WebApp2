@@ -1,7 +1,7 @@
 var app = angular.module('DonationWebApp');
 
 //app.controller('searchController', ['$scope','$http', '$location', function($scope, $http, $location) {
-function searchController($scope, $http, $location) {
+function searchController($scope, $http, $location, $rootScope) {
 
   // create a message to display in our view
   $scope.message = 'Search Page!';
@@ -13,8 +13,8 @@ function searchController($scope, $http, $location) {
   $scope.search = function () {
     $http.get('/search/' + $scope.formData.searchParam)
       .success(function (data) {
-        $scope.donations = data;
-        //$location.path('/search');
+        $rootScope.donations = data;
+        $location.path('/search');
 
         console.log(data);
       })

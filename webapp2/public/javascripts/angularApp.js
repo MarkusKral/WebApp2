@@ -54,6 +54,10 @@ app.config(['$routeProvider', function($routeProvider) {  //HERE
     .when('/signUp', {
       templateUrl: 'public/pages/signup.ejs',
       controller: 'signupController'
+    })
+    .when('/newest', {
+      templateUrl: 'public/pages/latest.ejs',
+      controller: 'latestController'
     });
 //});
 }]);
