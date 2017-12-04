@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js",
-    "build": "webpack"
+    "build": "webpack",
+    "start-prod": "NODE_ENV=prod node server.js",
+    "build-prod": "webpack --config webpack-prod.config.js"
   },
   "author": "Markus Kral",
   "license": "ISC",
@@ -18,6 +20,7 @@
     "css": "^2.2.1",
     "css-loader": "^0.24.0",
     "ejs": "^2.5.7",
+    "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "font-awesome": "^4.7.0",
     "html-webpack-plugin": "^2.30.1",

@@ -6,7 +6,9 @@ require('../stylesheets/style.css');
 var app = angular.module('DonationWebApp', ['ngRoute']);
 require('./controllers/index');
 
-app.config(function ($routeProvider) {
+
+app.config(['$routeProvider', function($routeProvider) {  //HERE
+//app.config(function ($routeProvider) {
   $routeProvider
   // route for the home page
     .when('/', {
@@ -53,5 +55,5 @@ app.config(function ($routeProvider) {
       templateUrl: 'public/pages/signup.ejs',
       controller: 'signupController'
     });
-});
-
+//});
+}]);

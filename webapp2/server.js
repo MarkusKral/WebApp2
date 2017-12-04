@@ -16,6 +16,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var flash    = require('connect-flash');
 var database = 'cookbookTest';
+var prod =  process.env.NODE_ENV === 'prod';
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
@@ -59,7 +60,11 @@ app.set('view engine', 'ejs');
 //app.use("/public", express.static(__dirname + "/public"));  // NEW
 //app.use(express.static(path.join(__dirname, '')));
 //app.set('views', path.join(__dirname, 'views'));
-app.use(express.static(path.join(__dirname, 'build')));     // CHANGED
+if (prod) {
+  app.use(express.static(path.join(__dirname, 'dist')));
+} else {
+  app.use(express.static(path.join(__dirname, 'build')));
+}
 app.use("/public", express.static(__dirname + "/public"));  // NEW
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 //app.use(express.static(path.join(__dirname, 'public')));
