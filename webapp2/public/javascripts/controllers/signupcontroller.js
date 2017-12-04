@@ -9,7 +9,7 @@ app.controller('signupController', ['$scope', '$location', '$http', function($sc
 
   //Reset our formData fields
 
-  $scope.signup() = function(){
+  $scope.signup = function(){
     $http.post('/signup', $scope.formData)
       .success(function(data) {
         $scope.donations = data;

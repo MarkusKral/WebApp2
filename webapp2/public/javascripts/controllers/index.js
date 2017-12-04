@@ -9,5 +9,7 @@ app.controller('loginController', ['$scope', require('./logincontroller')]);
 app.controller('viewReceipeController', ['$scope', require('./viewreceipe')]);
 app.controller('searchController', ['$scope', require('./searchcontroller')]);
 app.controller('signupController', ['$scope', require('./signupcontroller')]);
+app.controller('signupController', ['$scope', require('signupcontroller')]);
+
 
 

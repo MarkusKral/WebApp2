@@ -49,6 +49,8 @@ app.controller('donateController', ['$scope', '$location', '$http', '$rootScope'
   };
 
   $scope.updateReceipe = function (id) {
+    console.log("scope:", $scope);
+    console.log($scope.formData);
     $http.patch('/receipe/' + id, $scope.formData)
       .success(function (data) {
         $scope.donations = data;
@@ -66,18 +68,18 @@ app.controller('donateController', ['$scope', '$location', '$http', '$rootScope'
       });
   };
 
-  $scope.updateReceipe = function (id) {
-    $http.patch('/receipe/' + id)
-      .success(function (data) {
-        $location.path('/donate');
-        console.log(data);
-      })
-      .error(function (data) {
-        console.log('Error: ' + data);
-        $location.path('/donations');
-
-      });
-  };
+  // $scope.updateReceipe = function (id) {
+  //   $http.patch('/receipe/' + id)
+  //     .success(function (data) {
+  //       $location.path('/donate');
+  //       console.log(data);
+  //     })
+  //     .error(function (data) {
+  //       console.log('Error: ' + data);
+  //       $location.path('/donations');
+  //
+  //     });
+  // };
 
 
 }

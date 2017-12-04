@@ -34,6 +34,8 @@ app.controller('viewReceipeController', ['$scope', '$http','$location','$rootSco
         })
         .error(function(data) {
           console.log('Error: ' + data);
+          $location.path('/l');
+
         });
    // }
   };

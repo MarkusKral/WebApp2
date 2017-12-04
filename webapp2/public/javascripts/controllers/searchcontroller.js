@@ -9,10 +9,11 @@ app.controller('searchController', ['$scope','$http', '$location', function($sco
 
 
   $scope.search = function () {
-    $http.post('/search', $scope.formData)
+    $http.get('/search/' + $scope.formData.searchParam)
       .success(function (data) {
         $scope.donations = data;
-        //q$location.path('/donations');
+        //$location.path('/search');
+
         console.log(data);
       })
       .error(function (data) {
