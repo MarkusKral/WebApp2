@@ -32,8 +32,8 @@ var app = angular.module('DonationWebApp');
     $http.get('/receipe/' + id)
       .success(function (data) {
         //$location.path('/viewReceipe');
-        $rootScope.update = true;
-        $rootScope.donations = data;
+        //$rootScope.update = true;
+        //$rootScope.donations = data;
         $scope.donations = data;
 
         $location.path('/donate');
