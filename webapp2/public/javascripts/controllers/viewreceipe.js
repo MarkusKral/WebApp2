@@ -1,7 +1,9 @@
 var app = angular.module('DonationWebApp');
 
-app.controller('viewReceipeController', ['$scope', '$http','$location','$rootScope', function ($scope, $http, $location, $rootScope) {
-  // create a message to display in our view
+//app.controller('viewReceipeController', ['$scope', '$http','$location','$rootScope', function ($scope, $http, $location, $rootScope) {
+function viewReceipeController($scope, $http, $location, $rootScope) {
+
+    // create a message to display in our view
   $scope.message = 'Receipe Page!';
 
   $scope.viewReceipe = function (id) {
@@ -54,6 +56,7 @@ app.controller('viewReceipeController', ['$scope', '$http','$location','$rootSco
       });
     // }
   };
+};
 
-}
-]);
+module.exports = viewReceipeController;
+

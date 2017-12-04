@@ -1,6 +1,8 @@
 var app = angular.module('DonationWebApp');
 
-app.controller('donateController', ['$scope', '$location', '$http', '$rootScope', function ($scope, $location, $http, $rootScope) {
+//app.controller('donateController', ['$scope', '$location', '$http', '$rootScope', function ($scope, $location, $http, $rootScope) {
+  function donateController($scope, $location, $http, $rootScope) {
+
 
   $scope.update = false;
 
@@ -82,6 +84,7 @@ app.controller('donateController', ['$scope', '$location', '$http', '$rootScope'
   // };
 
 
-}
+};
+module.exports = donateController;
 
-]);
+//]);

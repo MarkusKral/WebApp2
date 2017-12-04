@@ -1,11 +1,13 @@
 var app = angular.module('DonationWebApp');
 
-app.controller('searchController', ['$scope','$http', '$location', function($scope, $http, $location) {
-    // create a message to display in our view
-    $scope.message = 'Search Page!';
-    $scope.formData = {};
+//app.controller('searchController', ['$scope','$http', '$location', function($scope, $http, $location) {
+function searchController($scope, $http, $location) {
 
-    $scope.searchParam = '';
+  // create a message to display in our view
+  $scope.message = 'Search Page!';
+  $scope.formData = {};
+
+  $scope.searchParam = '';
 
 
   $scope.search = function () {
@@ -22,7 +24,6 @@ app.controller('searchController', ['$scope','$http', '$location', function($sco
 
       });
   };
+};
 
-
-  }
-  ]);
+module.exports = searchController;

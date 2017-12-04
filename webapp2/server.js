@@ -56,10 +56,11 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.set('view engine', 'ejs');
 
-app.use("/public", express.static(__dirname + "/public"));  // NEW
+//app.use("/public", express.static(__dirname + "/public"));  // NEW
+app.use(express.static(path.join(__dirname, '')));
 app.set('views', path.join(__dirname, 'views'));
 //app.use(favicon(__dirname + '/public/favicon.ico'));
-app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'public')));
 
 
 

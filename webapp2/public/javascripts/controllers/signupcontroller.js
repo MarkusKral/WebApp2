@@ -1,6 +1,7 @@
 var app = angular.module('DonationWebApp');
 
-app.controller('signupController', ['$scope', '$location', '$http', function($scope, $location, $http) {
+//app.controller('signupController', ['$scope', '$location', '$http', function($scope, $location, $http) {
+function signupController($scope, $http, $location) {
 
   $scope.formData = {};
   $scope.formData.user = '';
@@ -21,6 +22,6 @@ app.controller('signupController', ['$scope', '$location', '$http', function($sc
         $location.path('/signup');
       });
   };
-}
+};
 
-]);
+module.exports = signupController;
