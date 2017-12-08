@@ -6,3 +6,10 @@ services:
 before_script:
   - sleep 10
   - mongo cookbookTest --eval 'db.createUser({user:"cookbook",pwd:"12345678",roles:["readWrite"]});'
+notifications:
+  email:
+    recipients:
+      - markus.kral@googlemail.com
+    on_success: never       
+    on_failure: always       
+
