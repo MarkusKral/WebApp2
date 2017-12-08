@@ -14,5 +14,6 @@ notifications:
     on_failure: always       
 script:
   - npm run coverage
+  - npm run check-coverage
 after_success:
   - npm run report-coverage

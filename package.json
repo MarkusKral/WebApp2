@@ -10,7 +10,8 @@
     "start-prod": "NODE_ENV=prod node server.js",
     "build-prod": "webpack --config webpack-prod.config.js",
     "coverage": "cross-env NODE_ENV=test PORT=4001 istanbul cover _mocha -- webapp2/test/*.js",
-    "report-coverage": "cat ./coverage/lcov.info | coveralls"
+    "report-coverage": "cat ./coverage/lcov.info | coveralls",
+    "check-coverage": "istanbul check-coverage --statements 70 --branches 40 --functions 40 --lines 50"
   },
   "author": "Markus Kral",
   "license": "ISC",
