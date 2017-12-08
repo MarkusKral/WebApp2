@@ -9,8 +9,9 @@
     "build": "webpack",
     "start-prod": "NODE_ENV=prod node server.js",
     "build-prod": "webpack --config webpack-prod.config.js",
-    "coverage": "cross-env NODE_ENV=test PORT=4001 istanbul cover _mocha -- webapp2/test/*.js"
- },
+    "coverage": "cross-env NODE_ENV=test PORT=4001 istanbul cover _mocha -- webapp2/test/*.js",
+    "report-coverage": "cat ./coverage/lcov.info | coveralls"
+  },
   "author": "Markus Kral",
   "license": "ISC",
   "devDependencies": {
@@ -21,6 +22,7 @@
     "chai-http": "^3.0.0",
     "chai-things": "^0.2.0",
     "clean-webpack-plugin": "^0.1.17",
+    "coveralls": "^2.13.1",
     "cross-env": "^5.1.1",
     "css": "^2.2.1",
     "css-loader": "^0.24.0",
