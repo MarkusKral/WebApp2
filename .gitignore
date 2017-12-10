@@ -3,7 +3,11 @@
 ./webapp2/node_modules/
 ./node_modules
 webapp2/node_modules
-webapp2/build
-webapp2/dist
+webapp2/build/*
+webapp2/dist/*
 *.swp
 /coverage
+./build
+./dist
+./node_modules/*
+node_modules/
