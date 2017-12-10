@@ -9,7 +9,6 @@ a {
 .glyphicon-thumbs-up { cursor:pointer }
 
 
-
 .sidenav {
   height: 100%;
   width: 0;
@@ -41,6 +40,7 @@ a {
   top: 0;
   right: 25px;
   font-size: 24px;
+
   margin-left: 50px;
 }
 

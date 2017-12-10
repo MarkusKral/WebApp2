@@ -1,9 +1,9 @@
-<div class="jumbotron text-center">
+<div class="jumbotron text-center" id="search">
     {{ message }}
     <!--{{donations | json}}-->
 
     <!--<pre> {{donations | json}}</pre>-->
-    <h1>Search for Receipes</h1>
+    <h1 id="Headline">Search for Receipes</h1>
 
     <div class="two" ng-controller="searchController">
         <div class="row">
@@ -18,14 +18,14 @@
                                ng-model="formData.searchParam"
                                ng-style="{'width': 400 + 'px'}"></input>
                     </div>
-                    <button type="submit" class="btn btn-primary">Search</button>
+                    <button type="submit" class="btn btn-primary" id="submit">Search</button>
                     <!--<button type="button" class="btn btn-info" ng-click="updateReceipe(donations._id)">Update Receipe</button>-->
                 </form>
             </div>
         </div>
     </div>
     <div class="two" ng-controller="viewReceipeController" ng-if="donations">
-        <table align="center" valign="middle">
+        <table align="center" valign="middle" id="searchTable">
             <tr>
                 <td allign="center">
                     <font size="+2">Name:</font>

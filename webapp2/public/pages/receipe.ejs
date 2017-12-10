@@ -2,8 +2,11 @@
     <h1>List one receipe</h1>
 
     <p>{{ message }}</p>
-    <!--<pre>{{donations | json}}</pre>-->
-
+    <pre>{{donations | json}}</pre>
+    <pre>{{donations.ingredients | json}}</pre>
+    <script>var obj = JSON.parse(donations)
+        </script>
+    <pre>obj.ingredients</pre>>
     <div ng-controller="viewReceipeController">
         <table align="center" valign="middle" width="40%">
             <tr ng-repeat="field in donations">
@@ -33,9 +36,15 @@
                 <td height="50">
                     Ingredients:
                 </td>
-                <td height="50">
-                    {{donations.ingredients}}
+            <tr ng-repeat="ingredient in donations.ingredients || json">
+
+            <td height="50">
+                    {{ingredient}}
                 </td>
+                <td height="50">
+                    {{donations.ingredients.ingredient}}
+                </td>
+            </tr>
 
             </tr>
 
@@ -53,14 +62,17 @@
         <div ng-controller="donateController">
         <button type="button" class="btn btn-info" ng-click="viewReceipe(donations._id)">UPDATE</button>
         </div>
-    </div>
+
+        <!--<script> var str = JSON.stringify(obj, null, 2  ); </script>-->
+        <!--{{str}}-->
 
 
     <iframe
             width="600"
             height="450"
             frameborder="0" style="border:0"
-            src="https://www.google.com/maps/embed/v1/place?key= AIzaSyCAmAnNgaCujUh1749SU5Qo-p7OkmyQqkE&q=Waterford">
+            src="https://www.google.com/maps/embed/v1/place?key= AIzaSyCAmAnNgaCujUh1749SU5Qo-p7OkmyQqkE&q=Waterford" + {{donations._id}}>
     </iframe>
+    </div>
 
 </div>

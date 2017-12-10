@@ -37,7 +37,7 @@
     "mocha": "^4.0.1",
     "nodemon": "^1.12.1",
     "path": "^0.12.7",
-    "selenium-webdriver": "3.3.0",
+    "selenium-webdriver": "^3.3.0",
     "style": "0.0.3",
     "style-loader": "^0.13.1",
     "supertest": "^3.0.0",

@@ -1,0 +1,86 @@
+<html ng-app="DonationWebApp">
+<head>
+    <title>Donation Web App Markus Kral</title>
+</head>
+
+<body ng-controller="mainController">
+<!-- NAVBAR -->
+
+<nav class="navbar navbar-inverse navbar-top" role="navigation">
+<!--<nav class="navbar navbar-inverse navbar-static-left" role="navigation">-->
+
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/"><i class="fa fa-pied-piper-alt fa-lg" style="color: white;"></i> Kral Markus
+                Web App</a>
+        </div>
+
+        <ul class="nav navbar-nav">
+            <div class="navbar-right" id="UserButtons">
+                <a href="#signUp" class="btn btn-default navbar-btn btn-success" role="button">SignUp</a>
+                <a href="#login" class="btn btn-default navbar-btn btn-primary" role="button">Log In</a>
+            </div>
+
+            <li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="#donate"><i class="fa fa-money"></i> Create a Receipe </a></li>
+            <li><a href="#donations"><i class="fa fa-list"></i> View All Receipes </a></li>
+            <li><a href="#search"><i class="fa fa-search"></i> Search </a></li>
+            <li><a href="#about"><i class="fa fa-info"></i> About</a></li>
+            <li><a href="#contact"><i class="fa fa-comment"></i> Contact </a></li>
+            <li><a href="#newest"><i class="fa fa-newspaper-o"></i> Latest Receipes </a></li>
+
+
+        </ul>
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropup
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+            </ul>
+        </div>
+
+
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <h2>Animated Sidenav Example</h2>
+    <p>Click on the element below to open the side navigation menu.</p>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+    </script>
+
+</nav>
+
+<!-- MAIN CONTENT AND INJECTED VIEWS -->
+<div id="main">
+
+    <div ng-view></div>
+
+</div> <!-- End of main div -->
+<footer class="text-center">
+    <p>This app is created by Markus Kral for the module Webapplications 2.
+    </p>
+</footer>
+</body>
+</html>

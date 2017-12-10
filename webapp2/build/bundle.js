@@ -59,7 +59,9 @@
 	var app = angular.module('DonationWebApp', ['ngRoute']);
 	__webpack_require__(23);
 	
-	app.config(function ($routeProvider) {
+	app.config(['$routeProvider', function ($routeProvider) {
+	  //HERE
+	  //app.config(function ($routeProvider) {
 	  $routeProvider
 	  // route for the home page
 	  .when('/', {
@@ -100,8 +102,12 @@
 	  }).when('/signUp', {
 	    templateUrl: 'public/pages/signup.ejs',
 	    controller: 'signupController'
+	  }).when('/newest', {
+	    templateUrl: 'public/pages/latest.ejs',
+	    controller: 'latestController'
 	  });
-	});
+	  //});
+	}]);
 
 /***/ }),
 /* 2 */
@@ -27689,7 +27695,7 @@
 	
 	
 	// module
-	exports.push([module.id, "body {\n  padding: 50px;\n  font: 14px \"Lucida Grande\", Helvetica, Arial, sans-serif;\n}\n\na {\n  color: #00B7FF;\n}\n.glyphicon-thumbs-up { cursor:pointer }", "", {"version":3,"sources":["/./public/stylesheets/style.css"],"names":[],"mappings":"AAAA;EACE,cAAc;EACd,yDAAyD;CAC1D;;AAED;EACE,eAAe;CAChB;AACD,uBAAuB,cAAc,EAAE","file":"style.css","sourcesContent":["body {\n  padding: 50px;\n  font: 14px \"Lucida Grande\", Helvetica, Arial, sans-serif;\n}\n\na {\n  color: #00B7FF;\n}\n.glyphicon-thumbs-up { cursor:pointer }"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "body {\n  padding: 50px;\n  font: 14px \"Lucida Grande\", Helvetica, Arial, sans-serif;\n}\n\na {\n  color: #00B7FF;\n}\n.glyphicon-thumbs-up { cursor:pointer }\n\n.navbar {\n  background-color: #5b5a5c;\n}\n.navbar .navbar-brand {\n  color: #ecf0f1;\n}\n.navbar .navbar-brand:hover,\n.navbar .navbar-brand:focus {\n  color: #ecdbff;\n}\n.navbar .navbar-text {\n  color: #ecf0f1;\n}\n.navbar .navbar-nav .nav-link {\n  color: #ecf0f1;\n  border-radius: .25rem;\n  margin: 0 0.25em;\n}\n.navbar .navbar-nav .nav-link:not(.disabled):hover,\n.navbar .navbar-nav .nav-link:not(.disabled):focus {\n  color: #ecdbff;\n}\n.navbar .navbar-nav .dropdown-menu {\n  background-color: #5b5a5c;\n  border-color: #4a007e;\n}\n.navbar .navbar-nav .dropdown-menu .dropdown-item {\n  color: #ecf0f1;\n}\n.navbar .navbar-nav .dropdown-menu .dropdown-item:hover,\n.navbar .navbar-nav .dropdown-menu .dropdown-item:focus,\n.navbar .navbar-nav .dropdown-menu .dropdown-item.active {\n  color: #ecdbff;\n  background-color: #4a007e;\n}\n.navbar .navbar-nav .dropdown-menu .dropdown-divider {\n  border-top-color: #4a007e;\n}\n.navbar .navbar-nav .nav-item.active .nav-link,\n.navbar .navbar-nav .nav-item.active .nav-link:hover,\n.navbar .navbar-nav .nav-item.active .nav-link:focus,\n.navbar .navbar-nav .nav-item.show .nav-link,\n.navbar .navbar-nav .nav-item.show .nav-link:hover,\n.navbar .navbar-nav .nav-item.show .nav-link:focus {\n  color: #ecdbff;\n  background-color: #4a007e;\n}\n.navbar .navbar-toggle {\n  border-color: #4a007e;\n}\n.navbar .navbar-toggle:hover,\n.navbar .navbar-toggle:focus {\n  background-color: #4a007e;\n}\n.navbar .navbar-toggle .navbar-toggler-icon {\n  color: #ecf0f1;\n}\n.navbar .navbar-collapse,\n.navbar .navbar-form {\n  border-color: #ecf0f1;\n}\n.navbar .navbar-link {\n  color: #ecf0f1;\n}\n.navbar .navbar-link:hover {\n  color: #ecdbff;\n}\n\n@media (max-width: 575px) {\n  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item {\n    color: #ecf0f1;\n  }\n  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:hover,\n  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:focus {\n    color: #ecdbff;\n  }\n  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item.active {\n    color: #ecdbff;\n    background-color: #4a007e;\n  }\n}\n\n@media (max-width: 767px) {\n  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item {\n    color: #ecf0f1;\n  }\n  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:hover,\n  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:focus {\n    color: #ecdbff;\n  }\n  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item.active {\n    color: #ecdbff;\n    background-color: #4a007e;\n  }\n}\n\n@media (max-width: 991px) {\n  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item {\n    color: #ecf0f1;\n  }\n  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:hover,\n  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:focus {\n    color: #ecdbff;\n  }\n  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item.active {\n    color: #ecdbff;\n    background-color: #4a007e;\n  }\n}\n\n@media (max-width: 1199px) {\n  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item {\n    color: #ecf0f1;\n  }\n  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:hover,\n  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:focus {\n    color: #ecdbff;\n  }\n  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item.active {\n    color: #ecdbff;\n    background-color: #4a007e;\n  }\n}\n\n.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item {\n  color: #ecf0f1;\n}\n.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:hover,\n.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:focus {\n  color: #ecdbff;\n}\n.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item.active {\n  color: #ecdbff;\n  background-color: #4a007e;\n}\n\n", "", {"version":3,"sources":["/./public/stylesheets/style.css"],"names":[],"mappings":"AAAA;EACE,cAAc;EACd,yDAAyD;CAC1D;;AAED;EACE,eAAe;CAChB;AACD,uBAAuB,cAAc,EAAE;;AAEvC;EACE,0BAA0B;CAC3B;AACD;EACE,eAAe;CAChB;AACD;;EAEE,eAAe;CAChB;AACD;EACE,eAAe;CAChB;AACD;EACE,eAAe;EACf,sBAAsB;EACtB,iBAAiB;CAClB;AACD;;EAEE,eAAe;CAChB;AACD;EACE,0BAA0B;EAC1B,sBAAsB;CACvB;AACD;EACE,eAAe;CAChB;AACD;;;EAGE,eAAe;EACf,0BAA0B;CAC3B;AACD;EACE,0BAA0B;CAC3B;AACD;;;;;;EAME,eAAe;EACf,0BAA0B;CAC3B;AACD;EACE,sBAAsB;CACvB;AACD;;EAEE,0BAA0B;CAC3B;AACD;EACE,eAAe;CAChB;AACD;;EAEE,sBAAsB;CACvB;AACD;EACE,eAAe;CAChB;AACD;EACE,eAAe;CAChB;;AAED;EACE;IACE,eAAe;GAChB;EACD;;IAEE,eAAe;GAChB;EACD;IACE,eAAe;IACf,0BAA0B;GAC3B;CACF;;AAED;EACE;IACE,eAAe;GAChB;EACD;;IAEE,eAAe;GAChB;EACD;IACE,eAAe;IACf,0BAA0B;GAC3B;CACF;;AAED;EACE;IACE,eAAe;GAChB;EACD;;IAEE,eAAe;GAChB;EACD;IACE,eAAe;IACf,0BAA0B;GAC3B;CACF;;AAED;EACE;IACE,eAAe;GAChB;EACD;;IAEE,eAAe;GAChB;EACD;IACE,eAAe;IACf,0BAA0B;GAC3B;CACF;;AAED;EACE,eAAe;CAChB;AACD;;EAEE,eAAe;CAChB;AACD;EACE,eAAe;EACf,0BAA0B;CAC3B","file":"style.css","sourcesContent":["body {\n  padding: 50px;\n  font: 14px \"Lucida Grande\", Helvetica, Arial, sans-serif;\n}\n\na {\n  color: #00B7FF;\n}\n.glyphicon-thumbs-up { cursor:pointer }\n\n.navbar {\n  background-color: #5b5a5c;\n}\n.navbar .navbar-brand {\n  color: #ecf0f1;\n}\n.navbar .navbar-brand:hover,\n.navbar .navbar-brand:focus {\n  color: #ecdbff;\n}\n.navbar .navbar-text {\n  color: #ecf0f1;\n}\n.navbar .navbar-nav .nav-link {\n  color: #ecf0f1;\n  border-radius: .25rem;\n  margin: 0 0.25em;\n}\n.navbar .navbar-nav .nav-link:not(.disabled):hover,\n.navbar .navbar-nav .nav-link:not(.disabled):focus {\n  color: #ecdbff;\n}\n.navbar .navbar-nav .dropdown-menu {\n  background-color: #5b5a5c;\n  border-color: #4a007e;\n}\n.navbar .navbar-nav .dropdown-menu .dropdown-item {\n  color: #ecf0f1;\n}\n.navbar .navbar-nav .dropdown-menu .dropdown-item:hover,\n.navbar .navbar-nav .dropdown-menu .dropdown-item:focus,\n.navbar .navbar-nav .dropdown-menu .dropdown-item.active {\n  color: #ecdbff;\n  background-color: #4a007e;\n}\n.navbar .navbar-nav .dropdown-menu .dropdown-divider {\n  border-top-color: #4a007e;\n}\n.navbar .navbar-nav .nav-item.active .nav-link,\n.navbar .navbar-nav .nav-item.active .nav-link:hover,\n.navbar .navbar-nav .nav-item.active .nav-link:focus,\n.navbar .navbar-nav .nav-item.show .nav-link,\n.navbar .navbar-nav .nav-item.show .nav-link:hover,\n.navbar .navbar-nav .nav-item.show .nav-link:focus {\n  color: #ecdbff;\n  background-color: #4a007e;\n}\n.navbar .navbar-toggle {\n  border-color: #4a007e;\n}\n.navbar .navbar-toggle:hover,\n.navbar .navbar-toggle:focus {\n  background-color: #4a007e;\n}\n.navbar .navbar-toggle .navbar-toggler-icon {\n  color: #ecf0f1;\n}\n.navbar .navbar-collapse,\n.navbar .navbar-form {\n  border-color: #ecf0f1;\n}\n.navbar .navbar-link {\n  color: #ecf0f1;\n}\n.navbar .navbar-link:hover {\n  color: #ecdbff;\n}\n\n@media (max-width: 575px) {\n  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item {\n    color: #ecf0f1;\n  }\n  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:hover,\n  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:focus {\n    color: #ecdbff;\n  }\n  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item.active {\n    color: #ecdbff;\n    background-color: #4a007e;\n  }\n}\n\n@media (max-width: 767px) {\n  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item {\n    color: #ecf0f1;\n  }\n  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:hover,\n  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:focus {\n    color: #ecdbff;\n  }\n  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item.active {\n    color: #ecdbff;\n    background-color: #4a007e;\n  }\n}\n\n@media (max-width: 991px) {\n  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item {\n    color: #ecf0f1;\n  }\n  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:hover,\n  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:focus {\n    color: #ecdbff;\n  }\n  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item.active {\n    color: #ecdbff;\n    background-color: #4a007e;\n  }\n}\n\n@media (max-width: 1199px) {\n  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item {\n    color: #ecf0f1;\n  }\n  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:hover,\n  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:focus {\n    color: #ecdbff;\n  }\n  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item.active {\n    color: #ecdbff;\n    background-color: #4a007e;\n  }\n}\n\n.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item {\n  color: #ecf0f1;\n}\n.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:hover,\n.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:focus {\n  color: #ecdbff;\n}\n.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item.active {\n  color: #ecdbff;\n  background-color: #4a007e;\n}\n\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -27704,11 +27710,12 @@
 	app.controller('mainController', ['$scope', __webpack_require__(25)]);
 	app.controller('donateController', ['$scope', '$location', '$http', '$rootScope', __webpack_require__(26)]);
 	app.controller('donationsController', ['$scope', '$http', '$location', __webpack_require__(27)]);
-	app.controller('contactController', ['$scope', __webpack_require__(28)]);
-	app.controller('loginController', ['$scope', '$location', '$http', __webpack_require__(29)]);
-	app.controller('viewReceipeController', ['$scope', '$http', '$location', '$rootScope', __webpack_require__(30)]);
-	app.controller('searchController', ['$scope', '$http', '$location', __webpack_require__(31)]);
-	app.controller('signupController', ['$scope', '$location', '$http', __webpack_require__(32)]);
+	app.controller('latestController', ['$scope', '$http', '$location', __webpack_require__(28)]);
+	app.controller('contactController', ['$scope', __webpack_require__(29)]);
+	app.controller('loginController', ['$scope', '$location', '$http', __webpack_require__(30)]);
+	app.controller('viewReceipeController', ['$scope', '$http', '$location', '$rootScope', __webpack_require__(31)]);
+	app.controller('searchController', ['$scope', '$http', '$location', '$rootScope', __webpack_require__(32)]);
+	app.controller('signupController', ['$scope', '$location', '$http', __webpack_require__(33)]);
 	//app.controller('signupController', ['$scope', require('signupcontroller')]);
 
 /***/ }),
@@ -27734,7 +27741,7 @@
 	
 	  //app.controller('mainController', ['$scope', function($scope) {
 	  // create a message to display in our view
-	  $scope.message = 'Homer for President!!';
+	  $scope.message = 'Web Application by Markus Kral';
 	};
 	
 	module.exports = mainController;
@@ -27772,8 +27779,8 @@
 	  $scope.viewReceipe = function (id) {
 	    $http.get('/receipe/' + id).success(function (data) {
 	      //$location.path('/viewReceipe');
-	      $rootScope.update = true;
-	      $rootScope.donations = data;
+	      //$rootScope.update = true;
+	      //$rootScope.donations = data;
 	      $scope.donations = data;
 	
 	      $location.path('/donate');
@@ -27884,6 +27891,28 @@
 
 	var app = angular.module('DonationWebApp');
 	
+	//app.controller('donationsController', ['$scope','$http', '$location', function($scope, $http, $location) {
+	function latestController($scope, $http, $location) {
+	
+	  // create a message to display in our view
+	  $scope.message = 'Receipes Page!';
+	
+	  $http.get('/newest').success(function (data) {
+	    $scope.donations = data;
+	    console.log(data);
+	  }).error(function (data) {
+	    console.log('Error: ' + data);
+	  });
+	};
+	
+	module.exports = latestController;
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports) {
+
+	var app = angular.module('DonationWebApp');
+	
 	function contactController($scope) {
 	  // create a message to display in our view
 	  $scope.message = 'This is the contact Page';
@@ -27892,7 +27921,7 @@
 	module.exports = contactController;
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports) {
 
 	var app = angular.module('DonationWebApp');
@@ -27921,7 +27950,7 @@
 	module.exports = loginController;
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports) {
 
 	var app = angular.module('DonationWebApp');
@@ -27958,7 +27987,7 @@
 	      $location.path('/donations');
 	    }).error(function (data) {
 	      console.log('Error: ' + data);
-	      $location.path('/l');
+	      $location.path('/login');
 	    });
 	    // }
 	  };
@@ -27980,13 +28009,13 @@
 	module.exports = viewReceipeController;
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports) {
 
 	var app = angular.module('DonationWebApp');
 	
 	//app.controller('searchController', ['$scope','$http', '$location', function($scope, $http, $location) {
-	function searchController($scope, $http, $location) {
+	function searchController($scope, $http, $location, $rootScope) {
 	
 	  // create a message to display in our view
 	  $scope.message = 'Search Page!';
@@ -27996,8 +28025,8 @@
 	
 	  $scope.search = function () {
 	    $http.get('/search/' + $scope.formData.searchParam).success(function (data) {
-	      $scope.donations = data;
-	      //$location.path('/search');
+	      $rootScope.donations = data;
+	      $location.path('/search');
 	
 	      console.log(data);
 	    }).error(function (data) {
@@ -28010,7 +28039,7 @@
 	module.exports = searchController;
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports) {
 
 	var app = angular.module('DonationWebApp');
