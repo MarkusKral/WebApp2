@@ -32,7 +32,7 @@
                 <!--</div>-->
                 <!--</nav>-->
 
-    <div id="nav" class="sidenav" style="font-size:75%">
+    <div id="mySidenav" class="sidenav" style="font-size:75%">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="#/"><i class="fa fa-home"></i> Home</a>
         <a href="#donate"><i class="fa fa-money"></i> Create a Receipe </a>
@@ -41,19 +41,21 @@
         <a href="#search"><i class="fa fa-search"></i> Search </a>
         <a href="#about"><i class="fa fa-info"></i> About</a>
         <a href="#contact"><i class="fa fa-comment"></i> Contact </a>
-        <a href="#signUp" class="btn btn-default navbar-btn btn-success" role="button" id="SignupButton">SignUp</a>
-        <a href="#login" class="btn btn-default navbar-btn btn-primary" role="button" id="LogInButton">Log In</a>
+        <a href="#signUp" class="btn btn-default navbar-btn btn-success" role="button">SignUp</a>
+        <a href="#login" class="btn btn-default navbar-btn btn-primary" role="button">Log In</a>
     </div>
+    <!--<a href="#signUp" class="btn btn-default navbar-btn btn-success" role="button">SignUp</a>-->
+    <!--<a href="#login" class="btn btn-default navbar-btn btn-primary" role="button">Log In</a>-->
 
 
     <span style="font-size:24px;cursor:pointer" onclick="openNav()">&#9776; Menue </span>
     <script>
       function openNav() {
-        document.getElementById("nav").style.width = "250px";
+        document.getElementById("mySidenav").style.width = "250px";
       }
 
       function closeNav() {
-        document.getElementById("nav").style.width = "0";
+        document.getElementById("mySidenav").style.width = "0";
       }
     </script>
 
