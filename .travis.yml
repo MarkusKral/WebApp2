@@ -17,3 +17,5 @@ script:
   - npm run check-coverage
 after_success:
   - npm run report-coverage
+after_failure:
+  - npm run report-coverage
