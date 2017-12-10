@@ -48,7 +48,7 @@ test.describe('Home page', function() {
             });
     } );
     test.after(function() {
-        // driver.quit();
+         driver.quit();
     });
 });
 
