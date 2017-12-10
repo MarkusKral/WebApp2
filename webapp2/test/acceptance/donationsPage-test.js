@@ -12,7 +12,7 @@ var pageSelector;
 var baseTable;
 var tableRows;
 
-test.describe('Donations page', function() {
+test.describe('List All Receipes page', function() {
     this.timeout(mochaTimeOut);
     test.before( function() {
         driver = new webdriver.Builder()
@@ -42,7 +42,7 @@ test.describe('Donations page', function() {
   test.it( 'Show the test-receipe', function() {
     driver.findElement(By.id('receipeTable')).then( function( element ) {
       element.getAttribute('innerHTML').then(function(text) {
-        expect(text).to.include("test3");
+        expect(text).to.include("test-receipe2");
       });
     });
   } );

@@ -12,7 +12,7 @@ var pageSelector;
 var baseTable;
 var tableRows;
 
-test.describe('Donations page', function () {
+test.describe('Search page', function () {
   this.timeout(mochaTimeOut);
   test.before(function () {
     driver = new webdriver.Builder()

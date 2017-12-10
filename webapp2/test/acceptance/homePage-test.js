@@ -20,7 +20,7 @@ test.describe('Home page', function() {
             .withCapabilities( webdriver.Capabilities.chrome() )
             .build();
         pageSelector = By.id('home');
-        navBarSelector = By.tagName('nav');
+        navBarSelector = By.id('nav');
         userButtons = By.id('UserButtons');
     } );
     test.beforeEach( function() {
