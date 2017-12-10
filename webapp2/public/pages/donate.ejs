@@ -1,5 +1,5 @@
-<div class="jumbotron text-center">
-    <h1>Create or update a receipe</h1>
+<div class="jumbotron text-center" id="createORupdate">
+    <h1 id="Headline">Create or update a receipe</h1>
 
     <p>{{ message }}</p>
 
@@ -16,6 +16,7 @@
                         </div>
                         <div class="form-group" align="center">
                             <input type="string"
+                                   id="nameInput"
                                    class="form-control"
                                    placeholder="Name"
                                    ng-model="formData.name"
@@ -23,12 +24,13 @@
                         </div>
                         <div class="form-group" align="center">
                             <input type="string"
+                                   id="quantityInput"
                                    class="form-control"
                                    placeholder="Ingredients"
                                    ng-model="formData.ingredients"
                                    ng-style="{'width': 400 + 'px'}"></input>
                         </div>
-                        <button type="submit" class="btn btn-primary">Create Receipe</button>
+                        <button type="submit" class="btn btn-primary" id="submitting">Create Receipe</button>
                     </form>
                 </div>
             </div>

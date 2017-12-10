@@ -10,7 +10,8 @@ var mochaTimeOut = 30000;
 
 var pageSelector ;
 var navBarSelector;
-var userButtons;
+var signupButton;
+var loginButton;
 
 
 test.describe('Home page', function() {
@@ -21,7 +22,9 @@ test.describe('Home page', function() {
             .build();
         pageSelector = By.id('home');
         navBarSelector = By.id('nav');
-        userButtons = By.id('UserButtons');
+        loginButton = By.id('LogInButton');
+        signupButton = By.id('SignupButton');
+
     } );
     test.beforeEach( function() {
         driver.get('http://localhost:3000');
@@ -41,12 +44,19 @@ test.describe('Home page', function() {
             });
     } );
 
-    test.it( 'shows the buttons', function() {
-      driver.findElement(userButtons)
+    test.it( 'shows the login-button', function() {
+      driver.findElement(loginButton)
         .then(function(element) {
           expect(element).to.not.equal(null );
         });
     } );
+
+  test.it( 'shows the signup-button', function() {
+    driver.findElement(signupButton)
+      .then(function(element) {
+        expect(element).to.not.equal(null );
+      });
+  } );
 
     test.it( 'shows the main image', function() {
         driver.findElement(By.tagName('img')).then(function(element) {

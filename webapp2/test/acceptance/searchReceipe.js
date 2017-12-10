@@ -41,8 +41,8 @@ test.describe('Search page', function () {
     });
   });
 
-  test.it('accepts donation and displays in list', function () {
-    var select = driver.findElement(By.tagName('form'));
+  test.it('search and display a receipe', function () {
+    var select = driver.findElement(By.id('submitting'));
     select.then(function () {
       return driver.findElement(By.tagName('input'));
     })
@@ -51,18 +51,17 @@ test.describe('Search page', function () {
         return element;
       })
       .then(function (element) {
-        element.sendKeys('test3');
+        element.sendKeys('test-receipe2');
       })
       .then(function (element) {
-        tableRows.submit();
+        select.submit();
+        select.click();
       })
       .then(function () {
-        driver.wait(until.elementLocated(By.id('results')), 20000);
-        return driver.findElements(By.tagName('tr'));
-      })
-      .then(function (donations) {
-        donations.getAttribute('innerHTML').then(function (text) {
-          expect(text).to.include("test3");
+        driver.findElement(By.id('searchTable')).then( function( element ) {
+          element.getAttribute('innerHTML').then(function(text) {
+            expect(text).to.include("test-receipe2");
+          });
         });
       });
 
