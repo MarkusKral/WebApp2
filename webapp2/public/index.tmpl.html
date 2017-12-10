@@ -4,33 +4,60 @@
     </head>
 
       <body ng-controller="mainController">
-    <!-- NAVBAR -->
+    <!--&lt;!&ndash; NAVBAR &ndash;&gt;-->
 
-                <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-                <div class="container">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="#/"><i class="fa fa-pied-piper-alt fa-lg" style="color: white;"></i> Donation Web App</a>
-                    </div>
+                <!--<nav class="navbar navbar-inverse navbar-static-top" role="navigation">-->
+                <!--<div class="container">-->
+                    <!--<div class="navbar-header">-->
+                        <!--<a class="navbar-brand" href="#/"><i class="fa fa-pied-piper-alt fa-lg" style="color: white;"></i> Donation Web App</a>-->
+                    <!--</div>-->
 
-                    <ul class="nav navbar-nav navbar-right">
-                      <div class="navbar-right">
+                    <!--<ul class="nav navbar-nav navbar-right">-->
+                      <!--<div class="navbar-right">-->
 
-                          <a href="#signUp" class="btn btn-default navbar-btn btn-success" role="button">SignUp</a>
-                          <a href="#login" class="btn btn-default navbar-btn btn-primary" role="button">Log In</a>
-                      </div>
+                          <!--<a href="#signUp" class="btn btn-default navbar-btn btn-success" role="button">SignUp</a>-->
+                          <!--<a href="#login" class="btn btn-default navbar-btn btn-primary" role="button">Log In</a>-->
+                      <!--</div>-->
 
-                    <li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
-                    <li><a href="#donate"><i class="fa fa-money"></i> Create a Receipe </a></li>
-                    <li><a href="#donations"><i class="fa fa-list"></i> View All Receipes </a></li>
-                    <li><a href="#search"><i class="fa fa-search"></i> Search </a></li>
-                    <li><a href="#about"><i class="fa fa-info"></i> About</a></li>
-                    <li><a href="#contact"><i class="fa fa-comment"></i> Contact </a></li>
-                    <li><a href="#newest"><i class="fa fa-newspaper-o"></i> Latest Receipes </a></li>
+                    <!--<li><a href="#/"><i class="fa fa-home"></i> Home</a></li>-->
+                    <!--<li><a href="#donate"><i class="fa fa-money"></i> Create a Receipe </a></li>-->
+                    <!--<li><a href="#donations"><i class="fa fa-list"></i> View All Receipes </a></li>-->
+                    <!--<li><a href="#search"><i class="fa fa-search"></i> Search </a></li>-->
+                    <!--<li><a href="#about"><i class="fa fa-info"></i> About</a></li>-->
+                    <!--<li><a href="#contact"><i class="fa fa-comment"></i> Contact </a></li>-->
+                    <!--<li><a href="#newest"><i class="fa fa-newspaper-o"></i> Latest Receipes </a></li>-->
 
-                    </ul>
+                    <!--</ul>-->
 
-                </div>
-                </nav>
+                <!--</div>-->
+                <!--</nav>-->
+
+    <div id="mySidenav" class="sidenav" style="font-size:75%">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#/"><i class="fa fa-home"></i> Home</a>
+        <a href="#donate"><i class="fa fa-money"></i> Create a Receipe </a>
+        <a href="#donations"><i class="fa fa-list"></i> View All Receipes </a>
+        <a href="#newest"><i class="fa fa-newspaper-o"></i> Latest Receipes </a>
+        <a href="#search"><i class="fa fa-search"></i> Search </a>
+        <a href="#about"><i class="fa fa-info"></i> About</a>
+        <a href="#contact"><i class="fa fa-comment"></i> Contact </a>
+        <a href="#signUp" class="btn btn-default navbar-btn btn-success" role="button">SignUp</a>
+        <a href="#login" class="btn btn-default navbar-btn btn-primary" role="button">Log In</a>
+    </div>
+    <!--<a href="#signUp" class="btn btn-default navbar-btn btn-success" role="button">SignUp</a>-->
+    <!--<a href="#login" class="btn btn-default navbar-btn btn-primary" role="button">Log In</a>-->
+
+
+    <span style="font-size:24px;cursor:pointer" onclick="openNav()">&#9776; Menue </span>
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+    </script>
 
 
      <!-- MAIN CONTENT AND INJECTED VIEWS -->
@@ -40,7 +67,7 @@
 
     </div> <!-- End of main div -->
        <footer class="text-center">
-        <p>View the Practical Lab for this App on <a href="http://ddrohan.gitbooks.io/web-app-dev-labs/content/lab_1.html">GitBook.com</a></p>
+        <p>Webapp2 Markus Kral</a></p>
       </footer>
     </body>
     </html>
