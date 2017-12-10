@@ -7,6 +7,10 @@ services:
 before_script:
   - sleep 10
   - mongo cookbookTest --eval 'db.createUser({user:"cookbook",pwd:"12345678",roles:["readWrite"]});'
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3
+
 notifications:
   email:
     recipients:
@@ -28,7 +32,3 @@ install:
   - sudo chmod +x /usr/local/share/chromedriver
   - sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
   - npm install
-before_script:      # NEW
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 
