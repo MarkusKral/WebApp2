@@ -43,7 +43,7 @@ To push to heroku one needs the heroku-cli installed.
 ### Home
 
 ![home-page](screenshots/home-page.png "Home")
-![home-page](screenshots/home-page_with_menue).png "Home")
+![home-page](screenshots/home-page_with_menue.png "Home")
 
 ![home-page](screenshots/home-test.png "Home")
 
