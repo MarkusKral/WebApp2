@@ -62,7 +62,7 @@ test.describe('Home page', function() {
         driver.findElement(By.tagName('img')).then(function(element) {
             element.getAttribute('src').then(function(text) {
                 expect(text).to.equal(
-                    'http://localhost:3000/public/images/homer.gif');
+                    'http://localhost:3000/public/images/backgroundHome.jpg');
             } );  
         });
     } );
