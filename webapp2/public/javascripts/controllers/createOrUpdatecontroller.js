@@ -1,7 +1,7 @@
 var app = angular.module('DonationWebApp');
 
-//app.controller('donateController', ['$scope', '$location', '$http', '$rootScope', function ($scope, $location, $http, $rootScope) {
-  function donateController($scope, $location, $http, $rootScope) {
+//app.controller('createOrUpdateController', ['$scope', '$location', '$http', '$rootScope', function ($scope, $location, $http, $rootScope) {
+  function createOrUpdateController($scope, $location, $http, $rootScope) {
 
 
   $scope.update = false;
@@ -18,12 +18,12 @@ var app = angular.module('DonationWebApp');
     $http.post('/receipe', $scope.formData)
       .success(function (data) {
         $scope.donations = data;
-        $location.path('/donations');
+        $location.path('/listAll');
         console.log(data);
       })
       .error(function (data) {
         console.log('Error: ' + data);
-        $location.path('/donations');
+        $location.path('/login');
 
       });
   };
@@ -31,12 +31,10 @@ var app = angular.module('DonationWebApp');
   $scope.viewReceipe = function (id) {
     $http.get('/receipe/' + id)
       .success(function (data) {
-        //$location.path('/viewReceipe');
-        //$rootScope.update = true;
-        //$rootScope.donations = data;
+
         $scope.donations = data;
 
-        $location.path('/donate');
+        $location.path('/createOrUpdate');
 
         //window.location.href = "#/viewReceipe"
 
@@ -60,31 +58,17 @@ var app = angular.module('DonationWebApp');
         console.log("this is the data inside the patch function");
         console.log(data);
 
-        $location.path('/donations');
+        $location.path('/listAll');
       })
       .error(function (data) {
         console.log($scope.formData);
         console.log('Error: ' + data);
-        $location.path('/donations');
+        $location.path('/listAll');
 
       });
   };
 
-  // $scope.updateReceipe = function (id) {
-  //   $http.patch('/receipe/' + id)
-  //     .success(function (data) {
-  //       $location.path('/donate');
-  //       console.log(data);
-  //     })
-  //     .error(function (data) {
-  //       console.log('Error: ' + data);
-  //       $location.path('/donations');
-  //
-  //     });
-  // };
-
-
 };
-module.exports = donateController;
+module.exports = createOrUpdateController;
 
 //]);

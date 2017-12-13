@@ -23,7 +23,7 @@ test.describe('Create a Receipe page', function () {
 
   });
   test.beforeEach(function () {
-    driver.get('http://localhost:3000/#/donate');
+    driver.get('http://localhost:3000/#/createOrUpdate');
     driver.wait(until.elementLocated(pageSelector), 2000);
   });
   test.it('shows the main header', function () {
@@ -67,7 +67,7 @@ test.describe('Create a Receipe page', function () {
         driver2 = new webdriver.Builder()
           .withCapabilities(webdriver.Capabilities.chrome())
           .build();
-        driver2.get('http://localhost:3000/#/donations');
+        driver2.get('http://localhost:3000/#/listAll');
         driver2.wait(until.elementLocated(By.id('receipes')), 2000);
         driver2.findElement(By.id('receipeTable')).then(function (element) {
           element.getAttribute('innerHTML').then(function (text) {

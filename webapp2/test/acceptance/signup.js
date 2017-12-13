@@ -67,7 +67,7 @@ test.describe('Sign up Page', function () {
         driver2 = new webdriver.Builder()
           .withCapabilities(webdriver.Capabilities.chrome())
           .build();
-        driver2.get('http://localhost:3000/#/donations');
+        driver2.get('http://localhost:3000/#/listAll');
         driver2.wait(until.elementLocated(By.id('receipes')), 2000);
         driver2.findElement(By.id('receipeTable')).then(function (element) {
           element.getAttribute('innerHTML').then(function (text) {

@@ -2,16 +2,11 @@
     <h1>List one receipe</h1>
 
     <p>{{ message }}</p>
-    <pre>{{donations | json}}</pre>
-    <pre>{{donations.ingredients | json}}</pre>
-    <script>var obj = JSON.parse(donations)
-        </script>
-    <pre>obj.ingredients</pre>>
+
     <div ng-controller="viewReceipeController">
         <table align="center" valign="middle" width="40%">
             <tr ng-repeat="field in donations">
-            <tr style="height:55px; font-size:36px; margin-left:20px; margin-right:20px; valign="middle";>
-
+            <tr style="height:55px; font-size:36px; margin-left:20px; margin-right:20px; valign="middle">
             <td height="100">
                 {{donations.name}}
             </td>
@@ -36,14 +31,10 @@
                 <td height="50">
                     Ingredients:
                 </td>
-            <tr ng-repeat="ingredient in donations.ingredients || json">
-
-            <td height="50">
-                    {{ingredient}}
-                </td>
                 <td height="50">
-                    {{donations.ingredients.ingredient}}
+                    {{donations.ingredients}}
                 </td>
+
             </tr>
 
             </tr>
@@ -51,7 +42,7 @@
 
             </tbody>
         </table>
-    </br>
+        </br>
         </br>
         </br>
         </br>
@@ -59,7 +50,7 @@
         </br>
 
         <button type="button" class="btn btn-danger" ng-click="delete(donations._id)">DELETE</button>
-        <div ng-controller="donateController">
+        <div ng-controller="createOrUpdateController">
         <button type="button" class="btn btn-info" ng-click="viewReceipe(donations._id)">UPDATE</button>
         </div>
 

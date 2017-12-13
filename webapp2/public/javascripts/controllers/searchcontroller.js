@@ -20,7 +20,7 @@ function searchController($scope, $http, $location, $rootScope) {
       })
       .error(function (data) {
         console.log('Error: ' + data);
-        $location.path('/donations');
+        $location.path('/listAll');
 
       });
   };

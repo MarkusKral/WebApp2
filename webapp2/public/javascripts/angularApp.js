@@ -16,14 +16,14 @@ app.config(['$routeProvider', function($routeProvider) {  //HERE
       controller: 'mainController'
     })
     // route for the donate page
-    .when('/donate', {
-      templateUrl: 'public/pages/donate.ejs',
-      controller: 'donateController'
+    .when('/createOrUpdate', {
+      templateUrl: 'public/pages/createOrUpdate.ejs',
+      controller: 'createOrUpdateController'
     })
     // route for the donations page
-    .when('/donations', {
-      templateUrl: 'public/pages/donations.ejs',
-      controller: 'donationsController'
+    .when('/listAll', {
+      templateUrl: 'public/pages/listAllReceipes.ejs',
+      controller: 'listAllReceipesController'
     })
     // route for the about page
     .when('/about', {

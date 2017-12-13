@@ -1,6 +1,6 @@
 var app = angular.module('DonationWebApp');
 
-//app.controller('donationsController', ['$scope','$http', '$location', function($scope, $http, $location) {
+//app.controller('listAllReceipesController', ['$scope','$http', '$location', function($scope, $http, $location) {
 function latestController($scope, $http, $location) {
 
   // create a message to display in our view

@@ -21,7 +21,7 @@ test.describe('List All Receipes page', function() {
         pageSelector = By.id('receipes');
     } );
     test.beforeEach( function() {
-        driver.get('http://localhost:3000/#/donations');
+        driver.get('http://localhost:3000/#/listAll');
         driver.wait(until.elementLocated(pageSelector), 2000);
     } );
 

@@ -8,13 +8,12 @@ function loginController($scope, $location, $http) {
   $scope.formData.password = '';
 
 
-  //Reset our formData fields
 
   $scope.login = function () {
     $http.post('/login', $scope.formData)
       .success(function (data) {
         $scope.donations = data;
-        $location.path('/donations');
+        $location.path('/listAll');
         console.log(data);
       })
       .error(function (data) {

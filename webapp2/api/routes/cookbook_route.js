@@ -25,7 +25,6 @@ module.exports = function(app) {
   // cookbook Routes for special receipe
   app.route('/receipe/:receipeID')
     .get(cookbook.getReceipebyID)
-    .post(isLoggedIn,cookbook.getProfile)
     .patch(isLoggedIn, cookbook.update_receipe)
     .delete(isLoggedIn, cookbook.delete_receipe);
 

@@ -26,13 +26,12 @@ function viewReceipeController($scope, $http, $location, $rootScope) {
   };
 
   $scope.delete = function(id) {
-    //if (confirm("Are you sure you want to delete?")) {
       console.log('Deleting id : ' + id);
       $http.delete('/receipe/' + id)
         .success(function(data) {
           $scope.donations = data;
           console.log(data);
-          $location.path('/donations');
+          $location.path('/listAll');
         })
         .error(function(data) {
           console.log('Error: ' + data);
@@ -40,21 +39,6 @@ function viewReceipeController($scope, $http, $location, $rootScope) {
 
         });
    // }
-  };
-
-  $scope.update = function(id) {
-    //if (confirm("Are you sure you want to delete?")) {
-    console.log('Updating id : ' + id);
-    $http.patch('/receipe/' + id)
-      .success(function(data) {
-        $scope.donations = data;
-        console.log(data);
-        $location.path('/donations');
-      })
-      .error(function(data) {
-        console.log('Error: ' + data);
-      });
-    // }
   };
 };
 
