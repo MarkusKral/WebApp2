@@ -15,7 +15,6 @@ exports.list_all_receipe= function(req, res) {
 };
 
 exports.newestReceipes= function(req, res) {
-  // doesnt work currently
   Receipe.find({}).sort({ Created_date : -1 }).limit(5).exec(function(err, task) {
     if (err)
       res.send  (err);
@@ -40,9 +39,6 @@ exports.getReceipebyUser = function (req,res){
 };
 
 exports.create_a_receipe = function(req, res) {
-  console.log("inside creation");
-  console.log(req.body);
-
   req.body.Created_by = req.user._id;
   var new_receipe = new Receipe(req.body);
   new_receipe.save(function(err, task) {
@@ -54,8 +50,6 @@ exports.create_a_receipe = function(req, res) {
 
 
 exports.update_receipe = function(req, res) {
-  console.log("inside update");
-  console.log(req.body);
   Receipe.findOneAndUpdate({_id: req.params.receipeID}, req.body, {new: true}, function(err, task) {
     if (err)
       res.send(err);
