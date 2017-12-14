@@ -2,8 +2,8 @@
 ## Assignment 2 
 
 Name: Markus Kral
+
 Student No.:  20078461
 
 
-Every Information needed for the assignment can be fond under
-    README.pdf
+Every Information needed for the assignment can be found within `README.pdf` 
